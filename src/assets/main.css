@@ -1,1 +1,9 @@
 @import './base.css';
+
+.wrapper {
+  display: grid; /* Aktiviert das Grid-Layout */
+  grid-template-columns: repeat(3, 1fr); /* Zwei gleich große Spalten */
+  gap: 1rem; /* Abstand zwischen den Elementen */
+  padding: 1rem; /* Innenabstand */
+}
+

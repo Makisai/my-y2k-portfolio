@@ -6,8 +6,17 @@ defineProps({
   width: {
     type: String,
     default: 'fit-content',
-  }
+  },
+  buttonOnClick:{
+    type: Function,
+    default: null,
+  },
+  buttonLabel:{
+    type: String,
+    default: null,
+  },
 })
+import MyButtons from './MyButtons.vue';
 </script>
 
 <template>
@@ -19,6 +28,11 @@ defineProps({
     </div>
     <div class="window-content">
       <slot></slot>
+      <MyButtons
+        v-if="buttonOnClick"
+        :label="buttonLabel"
+        :onclick="buttonOnClick"
+      />
     </div>
   </div>
 </template>
@@ -30,11 +44,13 @@ defineProps({
   text-align: left;
 }
 .window-header {
-  border-bottom-color: var(--border-color);
+  border-bottom-color: var(--border-white);
   border-bottom-width: 2px;
   border-bottom-style: solid;
+  border-radius: 0.5rem 0.5rem 0 0;
   padding: 0.25rem 0.25rem;
   display: flex;
+  background-color: white;
 }
 
 .close-button {
