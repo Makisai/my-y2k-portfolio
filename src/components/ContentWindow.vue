@@ -32,6 +32,7 @@ import MyButtons from './MyButtons.vue';
         v-if="buttonOnClick"
         :label="buttonLabel"
         :onclick="buttonOnClick"
+        class ="content-window-button"
       />
     </div>
   </div>
@@ -44,6 +45,7 @@ import MyButtons from './MyButtons.vue';
   text-align: left;
 }
 .window-header {
+  grid-row: 1; /* Header in der ersten Zeile */
   border-bottom-color: var(--border-white);
   border-bottom-width: 2px;
   border-bottom-style: solid;
@@ -83,13 +85,27 @@ import MyButtons from './MyButtons.vue';
   justify-content: center;
 }
 
+.window-content {
+  display: grid;
+  grid-template-rows: 1fr;/* Drei Zeilen: Header, Content, Footer */
+  grid-row: 1; /* Content in der mittleren Zeile */
+  padding: 1rem;
+  z-index: 1;
+}
+
 .window {
   background-color: var(--y2k-c-blue);
   border-radius: 0.5rem;
   box-shadow: 10px 10px var(--color-box-shadow);
   border-color: var(--border-color);
   border-width: 2px;
-  margin: 2rem;
   border-style: solid;
+  z-index: 0;
 }
+
+.content-window-button {
+  grid-row: 2; /* Button in der letzten Zeile */
+  justify-self: center; /* Zentriert den Button horizontal */
+  align-self: center; /* Zentriert den Button vertikal */
+  z-index: 10; /* Höherer Z-Index, damit der Button über anderen Elementen liegt */}
 </style>

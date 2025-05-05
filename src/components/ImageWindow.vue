@@ -10,7 +10,7 @@ defineProps({
 import ContentWindow from './ContentWindow.vue';
 </script>
 <template>
-  <ContentWindow :title="title" class="image-window">
+  <ContentWindow class="image-window" :title="title" :label="buttonLabel" :onclick="buttonOnClick">
       <img :src="image" alt="Image" class="image"/>
   </ContentWindow>
 </template>
@@ -26,7 +26,7 @@ import ContentWindow from './ContentWindow.vue';
   border-color: white;
   border-width: 0.5rem;
 }
- .image-window {
+.image-window {
   height: fit-content;
  }
 
