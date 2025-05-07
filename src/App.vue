@@ -2,12 +2,10 @@
 import TextWindow from './components/TextWindow.vue'
 import ImageWindow from './components/ImageWindow.vue'
 import ContentWindow from './components/ContentWindow.vue'
-import MaximizedWindow from './components/MaximizedWindow.vue'
 import { ref, onMounted } from 'vue'
 import PageHeader from './components/PageHeader.vue'
 
 const randomPositions = ref([])
-const isMaximizedWindowOpen = ref(false)
 
 function generateRandomPositions(count) {
   const positions = []
@@ -28,17 +26,6 @@ function generateRandomPositions(count) {
 onMounted(() => {
   generateRandomPositions(50)
 })
-
-function openMaximizedWindow(){
-  isMaximizedWindowOpen.value = true
-  document.body.classList.add('no-scroll')
-}
-
-function closeMaximizedWindow() {
-  console.log('closeMaximizedWindow')
-  isMaximizedWindowOpen.value = false
-  document.body.classList.remove('no-scroll')
-}
 </script>
 
 <template>
@@ -78,8 +65,6 @@ function closeMaximizedWindow() {
     <ImageWindow
       title="TRAVEL_JAPAN.me"
       image="/assets/images/DSC01033.jpg"
-      :buttonOnClick="openMaximizedWindow"
-      buttonLabel="URLAUBSFOTOS"
     />
     <ImageWindow
       title="INSPIRATIONAL_QUOTE.me"
@@ -89,24 +74,16 @@ function closeMaximizedWindow() {
     <ImageWindow
       title="SEASOUNDS.me"
       image="/assets/images/logo_croped.png"
-      :buttonOnClick="openMaximizedWindow"
-      buttonLabel="ZUM PROJEKT"
     />
     <ImageWindow
       title="PHOTOWALK.me"
       image="/assets/images/photowalk_logo_small.png"
-      :buttonOnClick="openMaximizedWindow"
-      buttonLabel="ZUM PROJEKT"
     />
 
     <ImageWindow
       title="COSPLAY.me"
       image="/assets/images/DSC01109.jpg"
-      :buttonOnClick="openMaximizedWindow"
-      buttonLabel="CLICK ME"
     />
-
-    <MaximizedWindow title="MaxiWindow" button-label="Close me" :buttonOnClick="closeMaximizedWindow" v-if="isMaximizedWindowOpen"></MaximizedWindow>
   </div>
 </template>
 
