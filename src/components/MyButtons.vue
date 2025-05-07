@@ -6,7 +6,7 @@ defineProps({
     type: String,
     required: true,
   },
-  onclick: {
+  buttonOnClick: {
     type: Function,
     default: null,
   },
@@ -26,7 +26,7 @@ function updateGradientPosition(event) {
 <template>
   <button
     class="my-button"
-    @click="onclick"
+    @click="buttonOnClick"
     @mousemove="updateGradientPosition"
     :style="{
       background: `radial-gradient(circle at ${gradientPosition.x} ${gradientPosition.y}, var(--y2k-c-pink), var(--y2k-c-purple))`,

@@ -29,9 +29,9 @@ import MyButtons from './MyButtons.vue';
     <div class="window-content">
       <slot></slot>
       <MyButtons
-        v-if="buttonOnClick"
+        v-if="buttonLabel"
         :label="buttonLabel"
-        :onclick="buttonOnClick"
+        :buttonOnClick="buttonOnClick"
         class ="content-window-button"
       />
     </div>
@@ -101,6 +101,7 @@ import MyButtons from './MyButtons.vue';
   border-width: 2px;
   border-style: solid;
   z-index: 0;
+  grid-column: span 1;
 }
 
 .content-window-button {

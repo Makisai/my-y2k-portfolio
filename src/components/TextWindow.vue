@@ -5,13 +5,21 @@ defineProps({
   },
   text: {
     type: String,
-  }
+  },
+  buttonOnClick: {
+    type: Function,
+    default: null,
+  },
+  buttonLabel: {
+    type: String,
+    default: null,
+  },
 })
 import ContentWindow from './ContentWindow.vue';
 
 </script>
 <template>
-  <ContentWindow :title="title" :label="buttonLabel" :onclick="buttonOnClick">
+  <ContentWindow :title="title" :buttonLabel="buttonLabel" :buttonOnClick="buttonOnClick">
       <p>{{ text }}</p>
   </ContentWindow>
 </template>

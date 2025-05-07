@@ -6,11 +6,19 @@ defineProps({
   image: {
     type: String,
   },
+  buttonOnClick: {
+    type: Function,
+    default: null,
+  },
+  buttonLabel: {
+    type: String,
+    default: null,
+  },
 })
 import ContentWindow from './ContentWindow.vue';
 </script>
 <template>
-  <ContentWindow class="image-window" :title="title" :label="buttonLabel" :onclick="buttonOnClick">
+  <ContentWindow class="image-window" :title="title" :buttonLabel="buttonLabel" :buttonOnClick="buttonOnClick">
       <img :src="image" alt="Image" class="image"/>
   </ContentWindow>
 </template>
