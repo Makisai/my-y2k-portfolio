@@ -6,6 +6,9 @@ defineProps({
   image: {
     type: String,
   },
+  text: {
+    type: String,
+  },
   buttonOnClick: {
     type: Function,
     default: null,
@@ -18,8 +21,9 @@ defineProps({
 import ContentWindow from './ContentWindow.vue';
 </script>
 <template>
-  <ContentWindow class="image-window" :title="title" :buttonLabel="buttonLabel" :buttonOnClick="buttonOnClick">
+  <ContentWindow class="image-window" :title="title" :buttonLabel="buttonLabel" :buttonOnClick="buttonOnClick" :text="text">
       <img :src="image" alt="Image" class="image"/>
+      <p v-if = "text">{{ text }}</p>
   </ContentWindow>
 </template>
 
