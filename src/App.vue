@@ -78,8 +78,6 @@ function closeMaximizedWindow() {
     <ImageWindow
       title="TRAVEL_JAPAN.me"
       image="/assets/images/DSC01033.jpg"
-      :buttonOnClick="openMaximizedWindow"
-      buttonLabel="URLAUBSFOTOS"
     />
     <ImageWindow
       title="INSPIRATIONAL_QUOTE.me"
@@ -89,24 +87,16 @@ function closeMaximizedWindow() {
     <ImageWindow
       title="SEASOUNDS.me"
       image="/assets/images/logo_croped.png"
-      :buttonOnClick="openMaximizedWindow"
-      buttonLabel="ZUM PROJEKT"
     />
     <ImageWindow
       title="PHOTOWALK.me"
       image="/assets/images/photowalk_logo_small.png"
-      :buttonOnClick="openMaximizedWindow"
-      buttonLabel="ZUM PROJEKT"
     />
 
     <ImageWindow
       title="COSPLAY.me"
       image="/assets/images/DSC01109.jpg"
-      :buttonOnClick="openMaximizedWindow"
-      buttonLabel="CLICK ME"
     />
-
-    <MaximizedWindow title="MaxiWindow" button-label="Close me" :buttonOnClick="closeMaximizedWindow" v-if="isMaximizedWindowOpen"></MaximizedWindow>
   </div>
 </template>
 
