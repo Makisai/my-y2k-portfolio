@@ -18,31 +18,45 @@ function getRandomColor() {
 
 // Reactive Variable für die Hintergrundfarbe
 const hoverColor = ref(null)
+const activeLink = ref(null)
 
 // Event-Handler für Hover
 function setRandomHoverColor(event) {
+  if (activeLink.value === event.target) return // Verhindert Überschreiben der aktiven Farbe
   hoverColor.value = getRandomColor()
   event.target.style.backgroundColor = hoverColor.value
-  event.target.style.color = 'var(--color-background)' // Textfarbe ändern
 }
 
 // Event-Handler für das Entfernen des Hover-Effekts
 function resetHoverColor(event) {
+  if (activeLink.value === event.target) return // Verhindert Zurücksetzen der aktiven Farbe
   event.target.style.backgroundColor = 'transparent'
-  event.target.style.color = 'var(--color-text)' // Textfarbe zurücksetzen
 }
+
+// Event-Handler für Klick
+function setActiveLink(event) {
+  if (activeLink.value) {
+    // Entferne die Hintergrundfarbe des vorherigen aktiven Links
+    activeLink.value.style.backgroundColor = 'transparent'
+  }
+  // Setze den neuen aktiven Link
+  activeLink.value = event.target
+  activeLink.value.style.backgroundColor = hoverColor.value}
 </script>
 
 <template>
   <div class="page-header">
-    <a
-      v-for="(category, index) in ['Cosplay', 'Travel', 'Code', 'Art', 'P&P']"
+    <router-link
+      v-for="(category, index) in ['','Cosplay', 'Travel', 'Code', 'Art', 'P&P']"
       :key="index"
+      :to="`/${category.toLowerCase()}`"
+      class="header-link"
       @mouseover="setRandomHoverColor"
       @mouseleave="resetHoverColor"
+      @click="setActiveLink"
     >
       {{ category }}
-    </a>
+  </router-link>
   </div>
 </template>
 
@@ -55,7 +69,7 @@ function resetHoverColor(event) {
   position: sticky;
   top: 0;
 }
-.page-header a {
+.header-link {
   color: var(--color-text);
   text-decoration: none;
   font-weight: bold;
