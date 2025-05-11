@@ -6,12 +6,22 @@ import TextWindow from '@/components/TextWindow.vue'
 <template>
   <ImageWindow title="MY_FACE.me" image="assets/images/me.jpg" class="my-face-item" />
   <TextWindow
-    title="JAPAN.me"
-    text="Moin, Ich bin Julia, eine Software Entwicklerin aus Hamburg.
-      Ich habe viele unterschiedliche Hobbys und Interesssen, die sich alle ihren Platz in meiner Freizeit
-      erkämpfen müssen. Ich neige dazu, oft alles auf einmal zu vollen und damit dann auch etwas über das Ziel
-      hinauszuschießen. Ich hoffe euch gefällt meine Seite, die auch ein bisschen so übertrieben ist wie ich."
+    title="Travel.me"
+    text="Ich verreise gerne und entdecke neue Städte. Ich finde Architektur und Gärten immer besonders spannend.
+      Das bisherige unbeschrtrittene Reisehighlight war auf jeden Fall Japan. Ich hoffe, dass ich in Zukunft noch mehr Orte von der Bucketlist angehen kann. Besonders Rom währe mal schön zu bereisen."
   />
+  <ImageWindow title="TOKIO_TOWER_DREAMS.me" image="/assets/images/travel/japan_tokio_tower.jpg" text="Tokio Tower 2023"/>
+  <ImageWindow title="CYBER_CITY.me" image="/assets/images/travel/japan_asakusa.jpg" text="Asakusa bei Nacht 2023"/>
+  <ImageWindow title="FUJI_SAN.me" image="/assets/images/travel/japan_Fuji_san_stair.jpg" text="Fuji-san auf der Fahrt von Tokio nach Kyoto 2023"/>
+  <ImageWindow title="OH_DEER.me" image="/assets/images/travel/japan_nara.JPG" text="Ich und die Rehe in Nara 2023"/>
+  <ImageWindow title="GOTTA_CATCH_THEM_ALL.me" image="/assets/images/travel/japan_pokemon.jpg" text="Meine Starter 2023"/>
+  <ImageWindow title="TEAMLAB.me" image="/assets/images/travel/japan_teamlab.JPG" text="teamlab planets 2023"/>
+  <ImageWindow title="STRAND.me" image="/assets/images/travel/strand.jpg" text="Ostseestrand 2024"/>
+  <ImageWindow title="APFELBLUETE.me" image="/assets/images/travel/altesLand_1.JPG" text="Apfelblüte im Alten Land 2025"/>
+  <ImageWindow title="ROSA_APFEL.me" image="/assets/images/travel/altesLand_2.JPG" text="Rosa Zieräpfel im Alten Land 2025"/>
+  <ImageWindow title="OLD_YORK.me" image="/assets/images/travel/altesLand_3.JPG" text="Apfelblüte auf dem Herzapfelhof 2025"/>
+
+
 </template>
 
 <style scoped>

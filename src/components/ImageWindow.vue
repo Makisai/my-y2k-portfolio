@@ -23,7 +23,7 @@ import ContentWindow from './ContentWindow.vue';
 <template>
   <ContentWindow class="image-window" :title="title" :buttonLabel="buttonLabel" :buttonOnClick="buttonOnClick" :text="text">
       <img :src="image" alt="Image" class="image"/>
-      <p v-if = "text">{{ text }}</p>
+      <p v-if = "text" class = "image-text">{{ text }}</p>
   </ContentWindow>
 </template>
 
@@ -41,5 +41,11 @@ import ContentWindow from './ContentWindow.vue';
 .image-window {
   height: fit-content;
  }
+
+.image-text{
+  font-size: 1rem;
+  text-align: center;
+  padding: 0rem 2rem;
+}
 
 </style>
